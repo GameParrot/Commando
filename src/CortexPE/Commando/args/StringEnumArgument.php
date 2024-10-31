@@ -44,7 +44,7 @@ abstract class StringEnumArgument extends BaseArgument {
 	public function __construct(string $name, bool $optional = false) {
 		parent::__construct($name, $optional);
 
-		$this->parameterData->enum = new CommandEnum("", $this->getEnumValues());
+		$this->parameterData->enum = new CommandEnum($this->getTypeName(), $this->getEnumValues());
 	}
 
 	public function getNetworkType(): int {
